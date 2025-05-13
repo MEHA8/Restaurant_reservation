@@ -7,26 +7,44 @@
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <div class="reservation-container">
-        <h2>Reserve a Table</h2>
-        <form action="backend.php" method="POST">
-            <label for="name">Full Name:</label>
-            <input type="text" id="name" name="name" required>
-            
-            <label for="email">Email:</label>
-            <input type="email" id="email" name="email" required>
+    <h1>Restaurant Reservation</h1>
+    <h2>Reserve a Table</h2>
+    <form action="backend.php" method="POST">
+        <label for="name">Full Name:</label>
+        <input type="text" id="name" name="name" required>
 
-            <label for="reservation_date">Reservation Date:</label>
-            <input type="date" id="reservation_date" name="reservation_date" required>
+        <label for="email">Email:</label>
+        <input type="email" id="email" name="email" required>
 
-            <label for="reservation_time">Reservation Time:</label>
-            <input type="time" id="reservation_time" name="reservation_time" required>
+        <label for="reservation_date">Reservation Date:</label>
+        <input type="date" id="reservation_date" name="reservation_date" required>
 
-            <label for="num_people">Number of People:</label>
-            <input type="number" id="num_people" name="num_people" required>
+        <label for="reservation_time">Reservation Time:</label>
+        <input type="time" id="reservation_time" name="reservation_time" required>
 
-            <button type="submit">Submit Reservation</button>
-        </form>
-    </div>
+        <label for="num_people">Number of People:</label>
+        <input type="number" id="num_people" name="num_people" required>
+
+        <h3>Select Menu Items (Optional)</h3>
+        <div id="menu-items">
+            <div class="menu-item">
+                <input type="checkbox" name="menu_items[]" value="1" />
+                <h3>Pizza</h3>
+                <p>Delicious cheese and tomato pizza</p>
+                <p><strong>Price: $15.00</strong></p>
+                <p><strong>Rating: 4.5/5</strong></p>
+            </div>
+            <div class="menu-item">
+                <input type="checkbox" name="menu_items[]" value="2" />
+                <h3>Pasta</h3>
+                <p>Classic Italian pasta with garlic sauce</p>
+                <p><strong>Price: $12.00</strong></p>
+                <p><strong>Rating: 4.7/5</strong></p>
+            </div>
+            <!-- Add more menu items as necessary -->
+        </div>
+
+        <button type="submit">Submit Reservation</button>
+    </form>
 </body>
 </html>

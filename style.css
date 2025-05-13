@@ -1,39 +1,45 @@
+/* Body Styles */
 body {
-  font-family: Arial, sans-serif;
-  padding: 20px;
-  background: #fffbe6;
-  color: #333;
+    font-family: Arial, sans-serif;
+    padding: 20px;
+    background: #fffbe6;
+    color: #333;
 }
 
+/* Heading Styles */
 h1, h2 {
-  color: #d35400;
+    color: #d35400;
 }
 
+/* Menu Items Container */
 #menu-items {
-  background: #fff;
-  padding: 15px;
-  border: 1px solid #ddd;
-  margin-bottom: 20px;
+    background: #fff;
+    padding: 15px;
+    border: 1px solid #ddd;
+    margin-bottom: 20px;
 }
 
-#menu-items div {
-  margin-bottom: 10px;
-  padding: 10px;
-  background-color: #f9f3e4;
-  border-left: 5px solid #e67e22;
+/* Individual Menu Item Styles */
+#menu-items .menu-item {
+    margin-bottom: 10px;
+    padding: 10px;
+    background-color: #f9f3e4;
+    border-left: 5px solid #e67e22;
 }
 
+/* Input and Button Styles */
 form input, form button {
-  display: block;
-  width: 100%;
-  margin-bottom: 10px;
-  padding: 10px;
-  font-size: 1em;
+    display: block;
+    width: 100%;
+    margin-bottom: 10px;
+    padding: 10px;
+    font-size: 1em;
 }
 
+/* Button Styles */
 button {
-  background-color: #e67e22;
-  color: white;
-  border: none;
-  cursor: pointer;
+    background-color: #e67e22;
+    color: white;
+    border: none;
+    cursor: pointer;
 }

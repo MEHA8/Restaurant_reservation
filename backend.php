@@ -1,34 +1,45 @@
 <?php
-// Connect to your database
 $servername = "localhost";
-$username = "root"; // default user for XAMPP is 'root'
-$password = "";     // no password by default
+$username = "root";  // default username for XAMPP
+$password = "";      // no password by default
 $dbname = "restaurant_db"; // your database name
 
 $conn = new mysqli($servername, $username, $password, $dbname);
 
-// Check connection
 if ($conn->connect_error) {
     die("Connection failed: " . $conn->connect_error);
 }
 
-// Get form data
-$name = $_POST['name'];
-$email = $_POST['email'];
-$date = $_POST['reservation_date'];
-$time = $_POST['reservation_time'];
-$people = $_POST['num_people'];
+// Handling reservation data
+if ($_SERVER['REQUEST_METHOD'] == 'POST') {
+    $name = $_POST['name'];
+    $email = $_POST['email'];
+    $reservation_date = $_POST['reservation_date'];
+    $reservation_time = $_POST['reservation_time'];
+    $num_people = $_POST['num_people'];
 
-// Insert into reservation table
-$sql = "INSERT INTO reservations (name, email, reservation_date, reservation_time, num_people) 
-        VALUES ('$name', '$email', '$date', '$time', '$people')";
+    // Insert reservation into database
+    $sql_reservation = "INSERT INTO reservations (name, email, reservation_date, reservation_time, num_people)
+                        VALUES ('$name', '$email', '$reservation_date', '$reservation_time', '$num_people')";
 
-if ($conn->query($sql) === TRUE) {
-    // Redirect to the success page if insert is successful
-    header("Location: success.html");
-    exit();
-} else {
-    echo "Error: " . $sql . "<br>" . $conn->error;
+    if ($conn->query($sql_reservation) === TRUE) {
+        // Get the reservation ID (auto-incremented)
+        $reservation_id = $conn->insert_id;
+
+        // Handle menu item selection
+        if (isset($_POST['menu_items'])) {
+            foreach ($_POST['menu_items'] as $menu_item_id) {
+                // Insert selected menu items into reservation_menu table
+                $sql_menu = "INSERT INTO reservation_menu (reservation_id, menu_item_id)
+                             VALUES ('$reservation_id', '$menu_item_id')";
+                $conn->query($sql_menu);
+            }
+        }
+
+        echo "Reservation successful!";
+    } else {
+        echo "Error: " . $sql_reservation . "<br>" . $conn->error;
+    }
 }
 
 $conn->close();
