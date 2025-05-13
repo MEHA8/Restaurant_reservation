@@ -10,23 +10,25 @@
 <body>
 
 <header>
-    <h1>Delicious Dining</h1>
-    <p>Book your table and enjoy a fantastic meal!</p>
+    <div class="header-content">
+        <h1>Delicious Dining</h1>
+        <p>Your next amazing meal is just a reservation away!</p>
+    </div>
 </header>
 
 <div class="container">
     <h2>Reserve Your Table</h2>
-    <form action="backend.php" method="POST">
+    <form action="backend.php" method="POST" class="reservation-form">
         <input type="text" name="name" placeholder="Your Name" required>
         <input type="email" name="email" placeholder="Your Email" required>
         <input type="date" name="reservation_date" required>
         <input type="time" name="reservation_time" required>
-        <input type="number" name="num_people" placeholder="Number of People" required>
+        <input type="number" name="num_people" placeholder="Number of People" required min="1">
 
         <h3>Choose Your Menu Items</h3>
-        <div id="menu-items">
-            <div>
-                <img src="dish1.jpg" alt="Dish Name">
+        <div id="menu-items" class="menu-items">
+            <div class="menu-item">
+                <img src="dish1.jpg" alt="Grilled Salmon">
                 <h3>Grilled Salmon</h3>
                 <p>A delicious salmon fillet grilled to perfection.</p>
                 <div class="price">$20</div>
@@ -35,10 +37,10 @@
                     <input type="checkbox" name="menu_items[]" value="1"> Add to reservation
                 </div>
             </div>
-            <!-- More menu items -->
+            <!-- Add More Menu Items Here -->
         </div>
 
-        <button type="submit">Submit Reservation</button>
+        <button type="submit" class="submit-btn">Submit Reservation</button>
     </form>
 </div>
 

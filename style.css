@@ -6,241 +6,138 @@
 }
 
 body {
-    font-family: 'Lora', serif;  /* Elegant font */
-    background-color: #FC2E20;
+    font-family: 'Poppins', sans-serif;
+    background-color: #f4f4f4;
     color: #333;
     line-height: 1.6;
 }
 
-/* Header */
 header {
-    background-image: url('https://yourimage.com/restaurant-dining.jpg'); /* High-quality background image of a classy restaurant */
-    background-size: cover;
-    background-position: center;
+    background: linear-gradient(135deg, #ff7f50, #ff6347);
     color: white;
-    padding: 120px 0;
+    padding: 20px 0;
     text-align: center;
-    text-shadow: 3px 3px 5px rgba(0, 0, 0, 0.3);
 }
 
-header h1 {
-    font-size: 4rem;
-    font-weight: 700;
-    text-transform: uppercase;
-    letter-spacing: 3px;
-    margin-bottom: 20px;
-    font-family: 'Playfair Display', serif;  /* Elegant font for header */
+header .header-content h1 {
+    font-size: 3rem;
+    margin-bottom: 0.5rem;
 }
 
-header p {
-    font-size: 1.5rem;
-    margin-top: 20px;
-    font-family: 'Poppins', sans-serif;
-    font-weight: 300;
-    letter-spacing: 1.5px;
+header .header-content p {
+    font-size: 1.2rem;
 }
 
-/* Container Styling */
+/* Container and Form */
 .container {
-    width: 85%;
-    max-width: 1200px;
-    margin: 60px auto;
-    padding: 30px;
-    background-color: white;
+    max-width: 800px;
+    margin: 2rem auto;
+    padding: 1.5rem;
+    background: #fff;
     border-radius: 8px;
-    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
-    transition: all 0.3s ease;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
 }
 
-.container:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.15);
-}
-
-/* Form Styling */
-form {
-    display: flex;
-    flex-direction: column;
-}
-
-form input, form select, form button {
-    padding: 16px;
-    margin: 12px 0;
-    font-size: 1.1rem;
-    border-radius: 8px;
-    border: 1px solid #ddd;
-    transition: border 0.3s ease;
-}
-
-/* Input Fields */
-form input[type="text"], form input[type="email"], form input[type="date"], form input[type="time"], form select {
-    background-color: #f9f9f9;
+h2 {
+    font-size: 2rem;
+    margin-bottom: 1.5rem;
     color: #333;
-    border: 1px solid #e2e2e2;
-    font-family: 'Poppins', sans-serif;
 }
 
-form input[type="text"]:focus, form input[type="email"]:focus, form input[type="date"]:focus, form input[type="time"]:focus, form select:focus {
-    border: 1px solid #ff8c42; /* Elegant golden color for focus */
+.reservation-form input, .reservation-form select {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 1rem;
+    border: 2px solid #ddd;
+    border-radius: 6px;
+    font-size: 1rem;
+}
+
+.reservation-form input:focus, .reservation-form select:focus {
     outline: none;
+    border-color: #ff6347;
 }
 
-/* Button Styling */
-form button {
-    background-color: #ff8c42;  /* Warm orange for a touch of excitement */
-    color: white;
-    border: none;
+/* Menu Items */
+.menu-items {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1.5rem;
+}
+
+.menu-item {
+    background-color: #f9f9f9;
+    padding: 1rem;
+    border-radius: 8px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.menu-item:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+}
+
+.menu-item img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+    border-radius: 8px;
+}
+
+.menu-item h3 {
+    font-size: 1.3rem;
+    margin-top: 1rem;
+}
+
+.menu-item p {
+    font-size: 1rem;
+    color: #777;
+}
+
+.price {
     font-weight: 600;
+    color: #ff6347;
+}
+
+.rating {
+    font-size: 1rem;
+}
+
+.checkbox {
+    margin-top: 0.5rem;
+}
+
+/* Button */
+.submit-btn {
+    background-color: #ff6347;
+    color: white;
+    padding: 12px 20px;
+    border: none;
+    border-radius: 6px;
+    font-size: 1.2rem;
     cursor: pointer;
     transition: background-color 0.3s ease;
-    padding: 16px;
-    font-size: 1.1rem;
-    border-radius: 8px;
 }
 
-form button:hover {
-    background-color: #e77c34;  /* Slightly darker golden shade */
-}
-
-/* Menu Section */
-#menu-items {
-    display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
-    gap: 40px;
-    margin-top: 50px;
-}
-
-#menu-items div {
-    background-color: white;
-    border-radius: 10px;
-    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.1);
-    overflow: hidden;
-    text-align: center;
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
-    position: relative;
-}
-
-#menu-items div:hover {
-    transform: translateY(-8px);
-    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
-}
-
-#menu-items img {
-    width: 100%;
-    height: 220px;
-    object-fit: cover;
-    transition: transform 0.3s ease;
-}
-
-#menu-items div:hover img {
-    transform: scale(1.1);
-}
-
-#menu-items h3 {
-    font-size: 1.8rem;
-    color: #e67e22;  /* Rich golden color */
-    margin: 15px 0;
-    font-family: 'Lora', serif;
-}
-
-#menu-items p {
-    font-size: 1.2rem;
-    color: #777;
-    padding: 0 10px;
-}
-
-#menu-items .price {
-    font-size: 1.4rem;
-    font-weight: 700;
-    color: #27ae60;  /* Fresh and appetizing green */
-    margin-top: 15px;
-}
-
-#menu-items .rating {
-    font-size: 1.2rem;
-    color: #f39c12;
-    margin-bottom: 10px;
-}
-
-#menu-items .checkbox {
-    margin-top: 15px;
-}
-
-/* Success Page */
-.success {
-    background-color: #27ae60;
-    color: white;
-    padding: 60px;
-    text-align: center;
-    border-radius: 8px;
-    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.1);
-    margin-top: 40px;
-}
-
-.success h2 {
-    font-size: 2.5rem;
-    font-weight: 700;
-}
-
-.success p {
-    font-size: 1.4rem;
-    margin-top: 20px;
+.submit-btn:hover {
+    background-color: #ff7f50;
 }
 
 /* Footer */
 footer {
+    text-align: center;
     background-color: #333;
     color: white;
-    text-align: center;
-    padding: 30px 0;
-    font-size: 1.2rem;
-    position: fixed;
-    width: 100%;
-    bottom: 0;
+    padding: 20px;
+    margin-top: 2rem;
 }
 
 footer a {
-    color: #fff;
+    color: #ff6347;
     text-decoration: none;
 }
 
 footer a:hover {
-    color: #ff8c42; /* Elegant hover effect */
-}
-
-/* Hover Effects for Button */
-button:hover {
-    background-color: #e67e22;
-    cursor: pointer;
-    transition: background-color 0.3s ease;
-}
-
-/* Responsiveness */
-@media (max-width: 768px) {
-    header h1 {
-        font-size: 3rem;
-    }
-
-    #menu-items {
-        grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
-    }
-}
-
-@media (max-width: 480px) {
-    header h1 {
-        font-size: 2.5rem;
-    }
-
-    header p {
-        font-size: 1.3rem;
-    }
-
-    #menu-items {
-        grid-template-columns: 1fr;
-    }
-
-    form input, form select, form button {
-        font-size: 1rem;
-        padding: 14px;
-    }
+    text-decoration: underline;
 }
