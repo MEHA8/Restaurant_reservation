@@ -1,20 +1,82 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Reservation Successful</title>
   <style>
+    /* General Styles */
     body {
-      font-family: sans-serif;
-      background-color: #e6ffe6;
+      font-family: 'Poppins', sans-serif;
+      background-color: #f4f8f4;
+      color: #333;
       text-align: center;
-      padding-top: 50px;
+      padding: 50px 0;
+      margin: 0;
+      height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-direction: column;
+      background-image: linear-gradient(to top, #e6ffe6, #ffffff);
     }
-    .tick {
-      font-size: 100px;
-      color: green;
-    }
+
     h1 {
-      color: green;
+      font-size: 2.5rem;
+      color: #2e8b57;
+      margin-top: 20px;
+    }
+
+    p {
+      font-size: 1.2rem;
+      color: #555;
+      margin-top: 10px;
+    }
+
+    .tick {
+      font-size: 120px;
+      color: #2e8b57;
+      animation: tickAnimation 1s ease-in-out;
+    }
+
+    /* Add subtle animation to the tick */
+    @keyframes tickAnimation {
+      0% {
+        transform: scale(0);
+      }
+      50% {
+        transform: scale(1.2);
+      }
+      100% {
+        transform: scale(1);
+      }
+    }
+
+    /* Button Styles */
+    .btn {
+      background-color: #2e8b57;
+      color: white;
+      padding: 12px 25px;
+      font-size: 1rem;
+      margin-top: 30px;
+      border: none;
+      border-radius: 30px;
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+    }
+
+    .btn:hover {
+      background-color: #228b22;
+    }
+
+    /* Footer Style */
+    footer {
+      position: fixed;
+      bottom: 10px;
+      width: 100%;
+      text-align: center;
+      font-size: 0.9rem;
+      color: #aaa;
     }
   </style>
 </head>
@@ -22,5 +84,12 @@
   <div class="tick">✔</div>
   <h1>Reservation Successful!</h1>
   <p>Thank you for booking with us. We look forward to serving you!</p>
+  <a href="index.html">
+    <button class="btn">Back to Home</button>
+  </a>
+
+  <footer>
+    <p>&copy; 2025 Delicious Dining. All rights reserved.</p>
+  </footer>
 </body>
 </html>
