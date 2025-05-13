@@ -1,50 +1,28 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Restaurant Reservation</title>
-    <link rel="stylesheet" href="style.css">
+  <title>Restaurant Reservation</title>
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <h1>Restaurant Reservation</h1>
-    <h2>Reserve a Table</h2>
-    <form action="backend.php" method="POST">
-        <label for="name">Full Name:</label>
-        <input type="text" id="name" name="name" required>
+  <h1>Reserve Your Table</h1>
 
-        <label for="email">Email:</label>
-        <input type="email" id="email" name="email" required>
+  <form action="backend.php" method="POST">
+    <input type="text" name="name" placeholder="Your Name" required>
+    <input type="email" name="email" placeholder="Email" required>
+    <input type="date" name="reservation_date" required>
+    <input type="time" name="reservation_time" required>
+    <input type="number" name="num_people" placeholder="No. of People" required>
 
-        <label for="reservation_date">Reservation Date:</label>
-        <input type="date" id="reservation_date" name="reservation_date" required>
+    <h2>Select Menu Items</h2>
+    <div id="menu-items">
+      <label><input type="checkbox" name="menu_items[]" value="1"> Paneer Butter Masala - ₹180 (⭐ 4.5)</label><br>
+      <label><input type="checkbox" name="menu_items[]" value="2"> Veg Biryani - ₹150 (⭐ 4.2)</label><br>
+      <label><input type="checkbox" name="menu_items[]" value="3"> Butter Naan - ₹25 (⭐ 4.0)</label><br>
+      <label><input type="checkbox" name="menu_items[]" value="4"> Chicken 65 - ₹200 (⭐ 4.7)</label><br>
+    </div>
 
-        <label for="reservation_time">Reservation Time:</label>
-        <input type="time" id="reservation_time" name="reservation_time" required>
-
-        <label for="num_people">Number of People:</label>
-        <input type="number" id="num_people" name="num_people" required>
-
-        <h3>Select Menu Items (Optional)</h3>
-        <div id="menu-items">
-            <div class="menu-item">
-                <input type="checkbox" name="menu_items[]" value="1" />
-                <h3>Pizza</h3>
-                <p>Delicious cheese and tomato pizza</p>
-                <p><strong>Price: $15.00</strong></p>
-                <p><strong>Rating: 4.5/5</strong></p>
-            </div>
-            <div class="menu-item">
-                <input type="checkbox" name="menu_items[]" value="2" />
-                <h3>Pasta</h3>
-                <p>Classic Italian pasta with garlic sauce</p>
-                <p><strong>Price: $12.00</strong></p>
-                <p><strong>Rating: 4.7/5</strong></p>
-            </div>
-            <!-- Add more menu items as necessary -->
-        </div>
-
-        <button type="submit">Submit Reservation</button>
-    </form>
+    <button type="submit">Make Reservation</button>
+  </form>
 </body>
 </html>
