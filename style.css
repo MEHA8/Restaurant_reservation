@@ -1,37 +1,246 @@
+/* General Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
 body {
-  font-family: Arial, sans-serif;
-  padding: 20px;
-  background: #fffbe6;
-  color: #333;
+    font-family: 'Lora', serif;  /* Elegant font */
+    background-color: #FC2E20;
+    color: #333;
+    line-height: 1.6;
 }
 
-h1, h2 {
-  color: #d35400;
+/* Header */
+header {
+    background-image: url('https://yourimage.com/restaurant-dining.jpg'); /* High-quality background image of a classy restaurant */
+    background-size: cover;
+    background-position: center;
+    color: white;
+    padding: 120px 0;
+    text-align: center;
+    text-shadow: 3px 3px 5px rgba(0, 0, 0, 0.3);
 }
 
+header h1 {
+    font-size: 4rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 3px;
+    margin-bottom: 20px;
+    font-family: 'Playfair Display', serif;  /* Elegant font for header */
+}
+
+header p {
+    font-size: 1.5rem;
+    margin-top: 20px;
+    font-family: 'Poppins', sans-serif;
+    font-weight: 300;
+    letter-spacing: 1.5px;
+}
+
+/* Container Styling */
+.container {
+    width: 85%;
+    max-width: 1200px;
+    margin: 60px auto;
+    padding: 30px;
+    background-color: white;
+    border-radius: 8px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s ease;
+}
+
+.container:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.15);
+}
+
+/* Form Styling */
+form {
+    display: flex;
+    flex-direction: column;
+}
+
+form input, form select, form button {
+    padding: 16px;
+    margin: 12px 0;
+    font-size: 1.1rem;
+    border-radius: 8px;
+    border: 1px solid #ddd;
+    transition: border 0.3s ease;
+}
+
+/* Input Fields */
+form input[type="text"], form input[type="email"], form input[type="date"], form input[type="time"], form select {
+    background-color: #f9f9f9;
+    color: #333;
+    border: 1px solid #e2e2e2;
+    font-family: 'Poppins', sans-serif;
+}
+
+form input[type="text"]:focus, form input[type="email"]:focus, form input[type="date"]:focus, form input[type="time"]:focus, form select:focus {
+    border: 1px solid #ff8c42; /* Elegant golden color for focus */
+    outline: none;
+}
+
+/* Button Styling */
+form button {
+    background-color: #ff8c42;  /* Warm orange for a touch of excitement */
+    color: white;
+    border: none;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    padding: 16px;
+    font-size: 1.1rem;
+    border-radius: 8px;
+}
+
+form button:hover {
+    background-color: #e77c34;  /* Slightly darker golden shade */
+}
+
+/* Menu Section */
 #menu-items {
-  background: #fff;
-  padding: 15px;
-  border: 1px solid #ddd;
-  margin-bottom: 20px;
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    gap: 40px;
+    margin-top: 50px;
 }
 
-#menu-items label {
-  display: block;
-  margin-bottom: 8px;
+#menu-items div {
+    background-color: white;
+    border-radius: 10px;
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    text-align: center;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    position: relative;
 }
 
-form input, form button {
-  display: block;
-  width: 100%;
-  margin-bottom: 10px;
-  padding: 10px;
-  font-size: 1em;
+#menu-items div:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
 }
 
-button {
-  background-color: #e67e22;
-  color: white;
-  border: none;
-  cursor: pointer;
+#menu-items img {
+    width: 100%;
+    height: 220px;
+    object-fit: cover;
+    transition: transform 0.3s ease;
+}
+
+#menu-items div:hover img {
+    transform: scale(1.1);
+}
+
+#menu-items h3 {
+    font-size: 1.8rem;
+    color: #e67e22;  /* Rich golden color */
+    margin: 15px 0;
+    font-family: 'Lora', serif;
+}
+
+#menu-items p {
+    font-size: 1.2rem;
+    color: #777;
+    padding: 0 10px;
+}
+
+#menu-items .price {
+    font-size: 1.4rem;
+    font-weight: 700;
+    color: #27ae60;  /* Fresh and appetizing green */
+    margin-top: 15px;
+}
+
+#menu-items .rating {
+    font-size: 1.2rem;
+    color: #f39c12;
+    margin-bottom: 10px;
+}
+
+#menu-items .checkbox {
+    margin-top: 15px;
+}
+
+/* Success Page */
+.success {
+    background-color: #27ae60;
+    color: white;
+    padding: 60px;
+    text-align: center;
+    border-radius: 8px;
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.1);
+    margin-top: 40px;
+}
+
+.success h2 {
+    font-size: 2.5rem;
+    font-weight: 700;
+}
+
+.success p {
+    font-size: 1.4rem;
+    margin-top: 20px;
+}
+
+/* Footer */
+footer {
+    background-color: #333;
+    color: white;
+    text-align: center;
+    padding: 30px 0;
+    font-size: 1.2rem;
+    position: fixed;
+    width: 100%;
+    bottom: 0;
+}
+
+footer a {
+    color: #fff;
+    text-decoration: none;
+}
+
+footer a:hover {
+    color: #ff8c42; /* Elegant hover effect */
+}
+
+/* Hover Effects for Button */
+button:hover {
+    background-color: #e67e22;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+/* Responsiveness */
+@media (max-width: 768px) {
+    header h1 {
+        font-size: 3rem;
+    }
+
+    #menu-items {
+        grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    }
+}
+
+@media (max-width: 480px) {
+    header h1 {
+        font-size: 2.5rem;
+    }
+
+    header p {
+        font-size: 1.3rem;
+    }
+
+    #menu-items {
+        grid-template-columns: 1fr;
+    }
+
+    form input, form select, form button {
+        font-size: 1rem;
+        padding: 14px;
+    }
 }

@@ -1,28 +1,50 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-  <title>Restaurant Reservation</title>
-  <link rel="stylesheet" href="style.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Restaurant Reservation</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
-  <h1>Reserve Your Table</h1>
 
-  <form action="backend.php" method="POST">
-    <input type="text" name="name" placeholder="Your Name" required>
-    <input type="email" name="email" placeholder="Email" required>
-    <input type="date" name="reservation_date" required>
-    <input type="time" name="reservation_time" required>
-    <input type="number" name="num_people" placeholder="No. of People" required>
+<header>
+    <h1>Delicious Dining</h1>
+    <p>Book your table and enjoy a fantastic meal!</p>
+</header>
 
-    <h2>Select Menu Items</h2>
-    <div id="menu-items">
-      <label><input type="checkbox" name="menu_items[]" value="1"> Paneer Butter Masala - ₹180 (⭐ 4.5)</label><br>
-      <label><input type="checkbox" name="menu_items[]" value="2"> Veg Biryani - ₹150 (⭐ 4.2)</label><br>
-      <label><input type="checkbox" name="menu_items[]" value="3"> Butter Naan - ₹25 (⭐ 4.0)</label><br>
-      <label><input type="checkbox" name="menu_items[]" value="4"> Chicken 65 - ₹200 (⭐ 4.7)</label><br>
-    </div>
+<div class="container">
+    <h2>Reserve Your Table</h2>
+    <form action="backend.php" method="POST">
+        <input type="text" name="name" placeholder="Your Name" required>
+        <input type="email" name="email" placeholder="Your Email" required>
+        <input type="date" name="reservation_date" required>
+        <input type="time" name="reservation_time" required>
+        <input type="number" name="num_people" placeholder="Number of People" required>
 
-    <button type="submit">Make Reservation</button>
-  </form>
+        <h3>Choose Your Menu Items</h3>
+        <div id="menu-items">
+            <div>
+                <img src="dish1.jpg" alt="Dish Name">
+                <h3>Grilled Salmon</h3>
+                <p>A delicious salmon fillet grilled to perfection.</p>
+                <div class="price">$20</div>
+                <div class="rating">⭐⭐⭐⭐⭐</div>
+                <div class="checkbox">
+                    <input type="checkbox" name="menu_items[]" value="1"> Add to reservation
+                </div>
+            </div>
+            <!-- More menu items -->
+        </div>
+
+        <button type="submit">Submit Reservation</button>
+    </form>
+</div>
+
+<footer>
+    <p>© 2025 Delicious Dining. All rights reserved. <a href="#">Privacy Policy</a></p>
+</footer>
+
 </body>
 </html>
